@@ -19,7 +19,7 @@ public class HawkerService {
         return hawkerrepository.findAll();
     }
 
-    public Optional<Hawker> singleHawker(ObjectId id){
-        return hawkerrepository.findById(id);
+    public Optional<Hawker> singleHawker(String serial_no){
+        return hawkerrepository.findHawkerBySerialno(serial_no);
     }
 }

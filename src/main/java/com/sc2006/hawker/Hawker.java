@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
+
 
 import java.util.List;
 
@@ -17,7 +19,8 @@ import java.util.List;
 public class Hawker {
     @Id
     private ObjectId _id;
-    private String serial_no;
+    @Field(name = "serial_no")
+    private String serialno;
     private String name;
     private String q1_cleaningstartdate;
     private String q1_cleaningenddate;
@@ -45,6 +48,6 @@ public class Hawker {
     private String status;
     private String google_3d_view;
     private String google_for_stall;
-//    @DocumentReference
-//    private List<Reviews> reviewIds;
+    @DocumentReference
+    private List<Review> reviews;
 }
